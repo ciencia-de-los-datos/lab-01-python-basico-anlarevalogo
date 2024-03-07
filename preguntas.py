@@ -12,7 +12,7 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 """
 
-def pregunta_01(input_file):
+def pregunta_01():
     """
     Retorne la suma de la segunda columna.
 
@@ -20,18 +20,18 @@ def pregunta_01(input_file):
     214
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         sum_col = 0
     
         for line in file:
             elements = line.strip().split('\t')
             sum_col += int(elements[1])
 
-pregunta_01("data.csv")
+pregunta_01()
 
 
 
-def pregunta_02(input_file):
+def pregunta_02():
     """
     Retorne la cantidad de registros por cada letra de la primera columna como la lista
     de tuplas (letra, cantidad), ordendas alfabéticamente.
@@ -46,7 +46,7 @@ def pregunta_02(input_file):
     ]
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         count_by_letter = {}
         
         for line in file:
@@ -60,9 +60,9 @@ def pregunta_02(input_file):
     sorted_counts = sorted(count_by_letter.items())
     return sorted_counts
 
-pregunta_02("data.csv")
+pregunta_02()
 
-def pregunta_03(input_file):
+def pregunta_03():
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
     de tuplas (letra, suma) ordendas alfabeticamente.
@@ -77,7 +77,7 @@ def pregunta_03(input_file):
     ]
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         sum_by_letter = {}
         for line in file:
             elements = line.strip().split('\t')
@@ -93,9 +93,9 @@ def pregunta_03(input_file):
 
     return sorted_sums
 
-pregunta_03("data.csv")
+pregunta_03()
 
-def pregunta_04(input_file):
+def pregunta_04():
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la cantidad de
     registros por cada mes, tal como se muestra a continuación.
@@ -117,7 +117,7 @@ def pregunta_04(input_file):
     ]
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         count_by_month = {}
         
         for line in file:
@@ -135,9 +135,9 @@ def pregunta_04(input_file):
 
     return count_by_month
 
-pregunta_04("data.csv")
+pregunta_04()
 
-def pregunta_05(input_file):
+def pregunta_05():
     """
     Retorne una lista de tuplas con el valor maximo y minimo de la columna 2 por cada
     letra de la columa 1.
@@ -152,7 +152,7 @@ def pregunta_05(input_file):
     ]
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         max_min_values = {}
         
         for line in file:
@@ -172,10 +172,10 @@ def pregunta_05(input_file):
 
     return result_list
 
-pregunta_05("data.csv")
+pregunta_05()
 
 
-def pregunta_06(input_file):
+def pregunta_06():
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
     una clave y el valor despues del caracter `:` corresponde al valor asociado a la
@@ -197,7 +197,7 @@ def pregunta_06(input_file):
     ]
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         min_max_values = {}
 
         for line in file:
@@ -218,9 +218,9 @@ def pregunta_06(input_file):
 
     return result_list
 
-pregunta_06("data.csv")
+pregunta_06()
 
-def pregunta_07(input_file):
+def pregunta_07():
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla contiene un
     valor posible de la columna 2 y una lista con todas las letras asociadas (columna 1)
@@ -241,7 +241,7 @@ def pregunta_07(input_file):
     ]
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         values_associated = {}
 
         for line in file:
@@ -258,10 +258,10 @@ def pregunta_07(input_file):
     result_list = sorted([(value, letters) for value, letters in values_associated.items()])
     return result_list
 
-pregunta_07("data.csv")
+pregunta_07()
 
 
-def pregunta_08(input_file):
+def pregunta_08():
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla contiene  el valor
     de la segunda columna; la segunda parte de la tupla es una lista con las letras
@@ -283,7 +283,7 @@ def pregunta_08(input_file):
     ]
 
     """
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         values_associated = {}
 
         for line in file:
@@ -300,10 +300,10 @@ def pregunta_08(input_file):
     result_list = sorted([(value, sorted(set(letters))) for value, letters in values_associated.items()])
     return result_list
 
-pregunta_08("data.csv")
+pregunta_08()
 
 
-def pregunta_09(input_file):
+def pregunta_09():
     """
     Retorne un diccionario que contenga la cantidad de registros en que aparece cada
     clave de la columna 5.
@@ -325,7 +325,7 @@ def pregunta_09(input_file):
     """
     clave_count = {}
 
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         for line in file:
             elements = line.strip().split('\t')
             column_5 = elements[4]
@@ -340,9 +340,9 @@ def pregunta_09(input_file):
     clave_count = dict(sorted(clave_count.items()))
     return clave_count
 
-pregunta_09("data.csv")
+pregunta_09()
 
-def pregunta_10(input_file):
+def pregunta_10():
     """
     Retorne una lista de tuplas contengan por cada tupla, la letra de la columna 1 y la
     cantidad de elementos de las columnas 4 y 5.
@@ -361,7 +361,7 @@ def pregunta_10(input_file):
 
     """
     tuplas_resultantes = []
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         for line in file:
             elements = line.strip().split('\t')
             
@@ -373,10 +373,10 @@ def pregunta_10(input_file):
     #tuplas_resultantes = sorted(tuplas_resultantes)
     return tuplas_resultantes
 
-pregunta_10("data.csv")
+pregunta_10()
 
 
-def pregunta_11(input_file):
+def pregunta_11():
     """
     Retorne un diccionario que contengan la suma de la columna 2 para cada letra de la
     columna 4, ordenadas alfabeticamente.
@@ -396,7 +396,7 @@ def pregunta_11(input_file):
     """
     sum_columna_2 = {}
 
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         for line in file:
             elements = line.strip().split('\t')
             
@@ -412,10 +412,10 @@ def pregunta_11(input_file):
     sum_columna_2 = dict(sorted(sum_columna_2.items()))
     return sum_columna_2
 
-pregunta_11("data.csv")
+pregunta_11()
 
 
-def pregunta_12(input_file):
+def pregunta_12():
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor la suma de
     los valores de la columna 5 sobre todo el archivo.
@@ -431,7 +431,7 @@ def pregunta_12(input_file):
 
     """
     suma_columna_5 = {}
-    with open(input_file, 'r') as file:
+    with open("data.csv", 'r') as file:
         for line in file:
             elements = line.strip().split('\t')
             
@@ -448,4 +448,4 @@ def pregunta_12(input_file):
     suma_columna_5 = dict(sorted(suma_columna_5.items()))
     return suma_columna_5
 
-pregunta_12("data.csv")
+pregunta_12()
