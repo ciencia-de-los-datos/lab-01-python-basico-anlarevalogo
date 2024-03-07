@@ -26,7 +26,8 @@ def pregunta_01():
         for line in file:
             elements = line.strip().split('\t')
             sum_col += int(elements[1])
-
+    
+    return sum_col
 pregunta_01()
 
 
